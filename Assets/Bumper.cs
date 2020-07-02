@@ -26,6 +26,5 @@ public class Bumper : MonoBehaviour
             Grabber.GetComponent<ShootingBall>().Shoot();
             Grabber.GetComponent<Grabber>().holded = false;
         }
-        
     }
 }

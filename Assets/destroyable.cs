@@ -52,6 +52,10 @@ public class destroyable : MonoBehaviour
                 {
                     hit = collision.relativeVelocity.magnitude * (heavyScaler * 8) / 2;
                 }
+                if(collision.collider.name != "Projectile")
+                {
+                    hit = hit * collision.collider.gameObject.GetComponent<Projectile>().power;
+                }
                 
             hp = hp - hit;
             Debug.Log("Affected Force on ID: " + gameObject.name + " Velocity: " + collision.relativeVelocity.magnitude);

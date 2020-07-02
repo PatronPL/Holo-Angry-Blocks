@@ -42,12 +42,18 @@ public class Grabber : MonoBehaviour
     public void RotationUpdate()
     {
         Vector3 targetDirection = Axis.transform.position - transform.position;
-        transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, targetDirection, 100, 0));
+        Vector3 lookRotation = Vector3.RotateTowards(transform.forward, targetDirection, 100, 0);
+        transform.rotation = Quaternion.LookRotation(lookRotation);
     }
 
     public void StopHold()
     {
         holded = true;
         gameObject.GetComponent<SphereCollider>().enabled = false;
+    }
+    public void ResetHold()
+    {
+        holded = false;
+        gameObject.GetComponent<SphereCollider>().enabled = true;
     }
 }

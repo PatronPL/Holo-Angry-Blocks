@@ -64,7 +64,7 @@ public class Rotater : MonoBehaviour
     {
         float power = 120;
         float distance = Vector3.Distance(ShootingPoint.transform.position, Plane.transform.position);
-        power = distance * 60;
+        power = distance * 75;
         Debug.Log("Distance: " + distance + " Counted power: " + power);
         gameObject.GetComponentInChildren<ShootingBall>().powerScaler = power;
     }
